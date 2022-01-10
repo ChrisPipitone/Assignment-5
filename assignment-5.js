@@ -56,3 +56,35 @@ addCol.addEventListener("click", () => {
 });
 
 
+
+// ●	remove rows from the grid
+const delRow = document.querySelector(".btn.btn-dark.my-3.del-row");
+
+delRow.addEventListener("click", () => {
+    grid.removeChild(grid.lastChild);
+})
+
+
+// ●	remove columns from the grid
+const delCol = document.querySelector(".btn.btn-dark.my-3.del-col");
+
+delCol.addEventListener("click", () => {
+    for(let i = 0; i < rows.length; i++)
+    {
+        rows[i].removeChild(rows[i].lastChild);
+    }
+})
+
+// ●	select a color from a dropdown menu of colors
+// ●	click on a single cell, changing its color to the currently selected color
+grid.addEventListener("click", (target) => {
+    const option1 = document.getElementById("o1");
+
+    if(option1.value == "red")
+        target.target.style.background = 'red';
+    if(option1.value == "blue")
+        target.target.style.background = 'blue';
+    if(option1.value == "green")
+    target.target.style.background = 'green';
+    
+})
