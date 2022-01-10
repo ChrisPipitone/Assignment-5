@@ -13,6 +13,7 @@ const rows = document.querySelectorAll(".row.justify-content-md-center");
 // ●	add rows to the grid
 //retrieve add row button
 const addRow = document.querySelector(".btn.btn-dark.my-3.add-row");
+
 addRow.addEventListener("click", () => {
     //create new row
     const newRow = document.createElement("div");
@@ -33,7 +34,6 @@ addRow.addEventListener("click", () => {
 
     grid.appendChild(newRow);
 });
-
 
 // ●	add columns to the grid
 
