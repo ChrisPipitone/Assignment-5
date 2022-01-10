@@ -88,3 +88,34 @@ grid.addEventListener("click", (target) => {
     target.target.style.background = 'green';
     
 })
+
+// ●	fill all uncolored cells with the currently selected color
+//retrive box array
+const boxArr = document.querySelectorAll(".box");
+
+const whiteBtn =  document.getElementById("wBtn");
+const option2 = document.getElementById("o2");
+
+whiteBtn.addEventListener("click", () =>{
+    boxArr.forEach( (box) => {
+        if(box.style.background == "" || box.style.background == "null" )
+            box.style.background = option2.value;
+    })
+})
+
+// ●	fill all cells with the currently selected color
+const fillAllBtn =  document.getElementById("fillAllBtn");
+const option3 = document.getElementById("o3");
+fillAllBtn.addEventListener("click", () =>{
+    boxArr.forEach( (box) => {
+            box.style.background = option3.value;
+    })
+})
+// ●	clear all cells/restore all cells to their original/initial color
+
+// ●	click and hold (mouseover) from a single cell (start) to a different cell (end) 
+//      such that all affected/hovered-over cells from start to end change to the currently 
+grid.addEventListener("drag", (target) => {
+    const option4 = document.getElementById("o4");
+    targer.target.style.background = option4.value;
+})
