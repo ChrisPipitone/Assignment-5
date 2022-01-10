@@ -37,6 +37,7 @@ addRow.addEventListener("click", () => {
 
 // ●	add columns to the grid
 
+
 //retrive col btn
 const addCol = document.querySelector(".btn.btn-dark.my-3.add-col");
 
