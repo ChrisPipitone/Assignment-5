@@ -1,4 +1,27 @@
 .box {
-    width: 100px;
+    width: 300px;
     height: 100px;
+}
+.mt-5.content{
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: row; */
+}
+.modifyButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.resetButton{
+    display: flex;
+    justify-content:center;
+}
+.options-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.option{
+
 }
