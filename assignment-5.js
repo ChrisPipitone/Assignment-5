@@ -1,8 +1,3 @@
-//make an event handler that takes an event and a function that all i have to do is create the different functions 
-// and not a bunch of even handlers just events i think like for when the different buttons are pressed and when 
-// the hover happens stuff like that  idk if its the best way to do it and the idea is sorta lost now till i 
-// can actually work on it
-
 //retrieve grid
 const grid = document.querySelector(".mt-5.content");
 
@@ -36,7 +31,6 @@ addRow.addEventListener("click", () => {
 });
 
 // ●	add columns to the grid
-
 
 //retrive col btn
 const addCol = document.querySelector(".btn.btn-dark.my-3.add-col");
@@ -80,6 +74,7 @@ delCol.addEventListener("click", () => {
 grid.addEventListener("click", (target) => {
     const option1 = document.getElementById("o1");
 
+
     if(option1.value == "red")
         target.target.style.background = 'red';
     if(option1.value == "blue")
@@ -111,6 +106,7 @@ fillAllBtn.addEventListener("click", () =>{
             box.style.background = option3.value;
     })
 })
+
 // ●	clear all cells/restore all cells to their original/initial color
 
 // ●	click and hold (mouseover) from a single cell (start) to a different cell (end) 
