@@ -72,7 +72,7 @@ grid.addEventListener("click", (event) => {
     const option1 = document.getElementById("o1");
 
     event.preventDefault();
-    console.log(event.target.className)
+
     if(event.target.className == "col-sm-auto border border-dark box white")
     {
         if(option1.value == "red")
@@ -115,6 +115,13 @@ fillAllBtn.addEventListener("click", () =>{
 // ●	click and hold (mouseover) from a single cell (start) to a different cell (end) 
 //      such that all affected/hovered-over cells from start to end change to the currently 
 grid.addEventListener("drag", (event) => {
+    event.preventDefault();
     const option4 = document.getElementById("o4");
+    console.log(event.target);
+    console.log(option4.value);
+    if(event.target.className == "col-sm-auto border border-dark box white")
+    {
         event.target.style.background = option4.value;
-})
+    }
+        
+}, false)
