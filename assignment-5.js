@@ -50,7 +50,6 @@ addCol.addEventListener("click", () => {
 });
 
 
-
 // ●	remove rows from the grid
 const delRow = document.querySelector(".btn.btn-dark.my-3.del-row");
 
@@ -58,10 +57,8 @@ delRow.addEventListener("click", () => {
     grid.removeChild(grid.lastChild);
 })
 
-
-// ●	remove columns from the grid
 const delCol = document.querySelector(".btn.btn-dark.my-3.del-col");
-
+// ●	remove columns from the grid
 delCol.addEventListener("click", () => {
     for(let i = 0; i < rows.length; i++)
     {
@@ -71,16 +68,21 @@ delCol.addEventListener("click", () => {
 
 // ●	select a color from a dropdown menu of colors
 // ●	click on a single cell, changing its color to the currently selected color
-grid.addEventListener("click", (target) => {
+grid.addEventListener("click", (event) => {
     const option1 = document.getElementById("o1");
 
-
-    if(option1.value == "red")
-        target.target.style.background = 'red';
-    if(option1.value == "blue")
-        target.target.style.background = 'blue';
-    if(option1.value == "green")
-    target.target.style.background = 'green';
+    event.preventDefault();
+    console.log(event.target.className)
+    if(event.target.className == "col-sm-auto border border-dark box white")
+    {
+        if(option1.value == "red")
+            event.target.style.background = 'red';
+        if(option1.value == "blue")
+            event.target.style.background = 'blue';
+        if(option1.value == "green")
+            event.target.style.background = 'green';
+    }
+    
     
 })
 
@@ -101,6 +103,7 @@ whiteBtn.addEventListener("click", () =>{
 // ●	fill all cells with the currently selected color
 const fillAllBtn =  document.getElementById("fillAllBtn");
 const option3 = document.getElementById("o3");
+
 fillAllBtn.addEventListener("click", () =>{
     boxArr.forEach( (box) => {
             box.style.background = option3.value;
@@ -111,7 +114,7 @@ fillAllBtn.addEventListener("click", () =>{
 
 // ●	click and hold (mouseover) from a single cell (start) to a different cell (end) 
 //      such that all affected/hovered-over cells from start to end change to the currently 
-grid.addEventListener("drag", (target) => {
+grid.addEventListener("drag", (event) => {
     const option4 = document.getElementById("o4");
-    targer.target.style.background = option4.value;
+        event.target.style.background = option4.value;
 })
